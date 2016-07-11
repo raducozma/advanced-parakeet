@@ -1,6 +1,6 @@
 /*global module:false*/
 'use strict';
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -42,41 +42,9 @@ module.exports = function(grunt) {
                 dest: 'dist/<%= pkg.name %>.min.js'
             }
         },
-        ngAnnotate: {
-            dist: {
-                files: [
-                    {
-                        expand: true,
-                        src: 'dist/<%= pkg.name %>.js'
-                    }
-                ]
-            }
-        },
-        ngtemplates: {
-            options: {
-                module: 'myNewApp',
-                htmlmin: {
-                    collapseBooleanAttributes:      true,
-                    collapseWhitespace:             true,
-                    removeAttributeQuotes:          true,
-                    removeEmptyAttributes:          true,
-                    removeRedundantAttributes:      true,
-                    removeScriptTypeAttributes:     true,
-                    removeStyleLinkTypeAttributes:  true
-                },
-                usemin: 'app.js'
-            },
-            main: {
-                src: ['app/**/*.html'],
-                dest: '.tmp/templates.js'
-            }
-        },
         jshint: {
             options: {
                 jshintrc: '.jshintrc'
-            },
-            gruntfile: {
-                src: 'Gruntfile.js'
             },
             app: {
                 src: 'app/**/*.js'
@@ -99,7 +67,7 @@ module.exports = function(grunt) {
                 ],
                 options: {
                     livereload: true,
-                    interval:5007
+                    interval: 5007
                 }
             }
         },
@@ -123,12 +91,12 @@ module.exports = function(grunt) {
                     endtag: '//-- endinjector:karma --'
                 },
                 files: {
-                    'karma.conf.js': ['app/**/*.js', 'tests/**/*.js', ]
+                    'karma.conf.js': ['app/**/*.js', 'tests/**/*.js',]
                 }
             }
         },
         wiredep: {
-            task: {
+            app: {
                 src: 'index.html'
             },
             test: {
@@ -146,14 +114,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-wiredep');
     grunt.loadNpmTasks('grunt-injector');
-    grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-open');
 
     // Default task.
-    grunt.registerTask('default', ['ngtemplates', 'concat', 'ngAnnotate', 'uglify', 'wiredep', 'injector']);
+    grunt.registerTask('default', ['concat', 'uglify', 'wiredep', 'injector']);
 
     grunt.registerTask('checkJsFiles', 'jshint');
 

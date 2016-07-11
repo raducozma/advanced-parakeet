@@ -21,11 +21,11 @@ module.exports = function(config) {
       // endbower//
 
       //-- injector:karma --
-      // 'app/app.js',
-      // 'app/directives/my-useless-directive.js',
-      // 'app/services/MyDataSrv.js',
-      // 'app/services/MyServiceSrv.js',
-      // 'tests/services/MyServiceSrvTest.js'
+      'app/app.js',
+      'app/directives/my-useless-directive.js',
+      'app/services/MyDataSrv.js',
+      'app/services/MyServiceSrv.js',
+      'tests/services/MyServiceSrvTest.js',
       //-- endinjector:karma --
       'app/**/*.js',
       'tests/**/*.js'
@@ -35,15 +35,6 @@ module.exports = function(config) {
     // list of files to exclude
     exclude: [
     ],
-
-    // plugins: [
-    //   'karma-jasmine',
-    //   'karma-phantomjs-launcher',
-    //   'karma-chrome-launcher',
-    //   'karma-junit-reporter',
-    //   'karma-coverage'
-    // ],
-
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
