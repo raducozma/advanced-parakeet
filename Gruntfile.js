@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         // Task configuration.
         open: {
             server: {
-                url: 'http://localhost:<%= server.options.port %>'
+                url: 'http://127.0.0.1:<%= server.options.port %>'
             }
         },
         concat: {
@@ -91,7 +91,7 @@ module.exports = function (grunt) {
                     endtag: '//-- endinjector:karma --'
                 },
                 files: {
-                    'karma.conf.js': ['app/**/*.js', 'tests/**/*.js',]
+                    'karma.conf.js': ['app/**/*.js', 'tests/**/*.js']
                 }
             }
         },

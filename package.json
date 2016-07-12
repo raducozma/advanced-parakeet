@@ -1,5 +1,5 @@
 {
-  "name": "shiny-parakeet",
+  "name": "advanced-parakeet",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vasileorza/shiny-parakeet.git"
+    "url": "git+https://github.com/raducozma/advanced-parakeet.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vasileorza/shiny-parakeet/issues"
+    "url": "https://github.com/raducozma/advanced-parakeet/issues"
   },
-  "homepage": "https://github.com/vasileorza/shiny-parakeet#readme",
+  "homepage": "https://github.com/raducozma/advanced-parakeet#readme",
   "dependencies": {
     "json-server": "^0.8.15",
     "live-server": "^1.0.0"

@@ -1,9 +1,9 @@
 {
-  "name": "shiny-parakeet",
+  "name": "advanced-parakeet",
   "description": "",
   "main": "index.html",
   "license": "ISDC",
-  "homepage": "https://github.com/vasileorza/shiny-parakeet",
+  "homepage": "https://github.com/raducozma/advanced-parakeet",
   "private": true,
   "ignore": [
     "**/.*",
