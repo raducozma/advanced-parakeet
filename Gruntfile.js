@@ -6,26 +6,10 @@ module.exports = function (grunt) {
     grunt.initConfig({
         // Metadata.
         pkg: grunt.file.readJSON('package.json'),
-        server: {
-            options: {
-                port: 3000
-            }
-        },
-
-        banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-        '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;*/\n',
 
         // Task configuration.
-        open: {
-            server: {
-                url: 'http://127.0.0.1:<%= server.options.port %>'
-            }
-        },
         concat: {
             options: {
-                banner: '<%= banner %>',
                 stripBanners: true
             },
             dist: {
@@ -34,9 +18,6 @@ module.exports = function (grunt) {
             }
         },
         uglify: {
-            options: {
-                banner: '<%= banner %>'
-            },
             dist: {
                 src: '<%= concat.dist.dest %>',
                 dest: 'dist/<%= pkg.name %>.min.js'
@@ -117,12 +98,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-wiredep');
     grunt.loadNpmTasks('grunt-injector');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-open');
 
     // Default task.
     grunt.registerTask('default', ['concat', 'uglify', 'wiredep', 'injector']);
-
-    grunt.registerTask('checkJsFiles', 'jshint');
 
     // Used for delaying livereload until after server has restarted
     grunt.registerTask('wait', function () {
@@ -137,13 +115,10 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('serve', function (target) {
-        grunt.log.ok('test' + target);
-
         grunt.task.run([
             'injector',
             'wiredep',
             'wait',
-            'open',
             'watch'
         ]);
     });
