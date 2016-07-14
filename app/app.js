@@ -1,1 +1,1 @@
-angular.module('myNewApp', []);
+angular.module('myNewApp', ['restangular']);

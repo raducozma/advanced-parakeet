@@ -17,11 +17,14 @@ module.exports = function(config) {
     files: [
       // bower:js
       'bower_components/angular/angular.js',
+      'bower_components/lodash/lodash.js',
+      'bower_components/restangular/dist/restangular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower//
 
       //-- injector:karma --
       'app/app.js',
+      'app/app.config.js',
       'app/directives/my-useless-directive.js',
       'app/services/MyDataSrv.js',
       'app/services/MyServiceSrv.js',

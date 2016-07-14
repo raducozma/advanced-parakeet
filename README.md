@@ -30,4 +30,8 @@ response.setHeader("Access-Control-Allow-Credentials", "true");
 response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
 response.setHeader("Access-Control-Allow-Headers", "Authorization");
 ```
+To set the base URL for all REST calls, check configuration file `app/app.config.js'.
+```javascript
+RestangularProvider.setBaseUrl('https://cors-test.appspot.com');
+```
 

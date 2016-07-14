@@ -1,20 +1,12 @@
-angular.module('myNewApp').directive('myUselessDirective', function () {
-    return {
-        controllerAs: 'ctrl',
-        templateUrl: 'app/directives/my-useless-directive.html',
-        controller: function (MyServiceSrv, $http) {
-            var ctrl = this;
-			
-			$http({
-				method: 'GET',
-				url: 'https://cors-test.appspot.com/test'
-			}).then(function (response) {
-				ctrl.status = response.status;
-			});
-            // ctrl.getName = function () {
-            //     return 'baubau';
-            // }
-            ctrl.getName = MyServiceSrv.getName;
-        }
-    };
+angular.module('myNewApp').component('myUselessDirective', {
+	templateUrl: 'app/directives/my-useless-directive.html',
+	controller: function (MyServiceSrv) {
+		var $ctrl = this;
+
+		$ctrl.getName = MyServiceSrv.getName;
+		
+		MyServiceSrv.getStatus().then(function (response) {
+			$ctrl.status = response.status;
+		});
+	}
 });

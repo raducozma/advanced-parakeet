@@ -55,7 +55,7 @@ module.exports = function (grunt) {
         injector: {
             scripts: {
                 files: {
-                    'index.html': ['app/**/*.js']
+                    'index.html': ['app/app.js', 'app/**/*.js']
                 }
             },
             css: {
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
                     endtag: '//-- endinjector:karma --'
                 },
                 files: {
-                    'karma.conf.js': ['app/**/*.js', 'tests/**/*.js']
+                    'karma.conf.js': ['app/app.js', 'app/**/*.js', 'tests/**/*.js']
                 }
             }
         },
