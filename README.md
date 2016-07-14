@@ -19,16 +19,15 @@ $ bower install
 
 ### Usage Instructions
 The server can be started by running the `npm start` command in the project root folder. After starting the server the command automatically runs `grunt serve` which injects all dependencies in `index.html` and watches over any file changes for live reload.
-By default, the webserver starts on localhost:3000(to change this check `package.json` file).
+By default, the webserver starts on `localhost:3000`(to change this check `package.json` file).
 
 ```
 $ npm start
 ```
-To avoid any `Cross Site Reference` errors, the application server should respond with the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) mechanism, which implies the usage of the following headers on the response:
+To avoid any `Cross Site Reference` errors, the application server should respond with the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) mechanism, which can be obtain by the usage of the following headers on the response:
 ```java
 response.setHeader("Access-Control-Allow-Credentials", "true");
 response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
 response.setHeader("Access-Control-Allow-Headers", "Authorization");
 ```
 
-And that's it...
